@@ -8,4 +8,14 @@ $(document).ready(function() {
   var food;
   var score;
   var snakeArray;
+
+  function init() {
+    defaultDirection = "right";
+    createSnake();
+    createFood();
+    score = 0;
+    if(typeof gameLoop != "undefined") clearInterval(gameLoop);
+    gameLoop = setInterval(paint, 60);
+  }
+  init();
 });
