@@ -59,6 +59,11 @@ $(document).ready(function() {
       var tail = snakeArray.pop();
       tail.x = directionX; tail.y = directionY;
     }
+    snakeArray.unshift(tail);
+    for(var i = 0; i < snakeArray.length; i++) {
+      var cell = snakeArray[i];
+      paint_cell(cell.x, cell.y);
+    }
 
 
   }
