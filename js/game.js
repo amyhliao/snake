@@ -34,4 +34,33 @@ $(document).ready(function() {
     };
   }
 
+  function design() {
+    contex.fillStyle = "white";
+    contex.fillRect(0, 0, width, height);
+    contex.strokeStyle = "black";
+    contex.strokeRect(0, 0, width, height);
+    var directionX = snakeArray[0].x;
+    var directionY = snakeArray[0].y;
+    if(defaultDirection == "right") directionX++;
+    else if(defaultDirection == "left") directionX--;
+    else if(defaultDirection == "up") directionY--;
+    else if(defaultDirection == "down") directionY++;
+
+    if(directionX == -1 || directionX == width/cellWidth || directionY == -1 || directionY == height/cellWidth || checkCollision(directionX, directionY, snakeArray)) {
+      init();
+      return;
+    }
+
+    if(directionX == food.x && directionY == food.y) {
+      var tail = {x: directionX, y: directionY};
+      score++;
+      createFood();
+    } else {
+      var tail = snakeArray.pop();
+      tail.x = directionX; tail.y = directionY;
+    }
+
+
+  }
+
 });
