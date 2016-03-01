@@ -18,4 +18,13 @@ $(document).ready(function() {
     gameLoop = setInterval(paint, 60);
   }
   init();
+
+  function createSnake() {
+    var length = 5;
+    snakeArray = [];
+    for (var i = length - 1; i >= 0; i--) {
+      snakeArray.push({x:i, y:0});
+    }
+  }
+
 });
