@@ -27,4 +27,11 @@ $(document).ready(function() {
     }
   }
 
+  function createFood() {
+    food = {
+      x: Math.round(Math.random()*(width-cellWidth)/cellWidth),
+      y: Math.round(Math.random()*(height-cellWidth)/cellWidth),
+    };
+  }
+
 });
