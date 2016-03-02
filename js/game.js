@@ -63,19 +63,21 @@ $(document).ready(function() {
     snakeArray.unshift(tail);
     for(var i = 0; i < snakeArray.length; i++) {
       var cell = snakeArray[i];
-      paint_cell(cell.x, cell.y);
+      paintCell(cell.x, cell.y);
     }
 
-    paint_cell(food.x, food.y);
+    paintCell(food.x, food.y);
     var scoreText = "Score:" + score;
     contex.fillText(scoreText, 5, height - 5);
   }
 
-  function paint_cell(x, y) {
+  function paintCell(x, y) {
     contex.fillStyle = "blue";
     contex.fillRect(x * cellWidth, y * cellWidth, cellWidth, cellWidth);
     contex.strokeStyle = "white";
     contex.strokeRect(x * cellWidth, y * cellWidth, cellWidth, cellWidth);
   }
+
+
 
 });
