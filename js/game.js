@@ -71,4 +71,11 @@ $(document).ready(function() {
     contex.fillText(scoreText, 5, height - 5);
   }
 
+  function paint_cell(x, y) {
+    contex.fillStyle = "blue";
+    contex.fillRect(x * cellWidth, y * cellWidth, cellWidth, cellWidth);
+    contex.strokeStyle = "white";
+    contex.strokeRect(x * cellWidth, y * cellWidth, cellWidth, cellWidth);
+  }
+
 });
