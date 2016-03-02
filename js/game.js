@@ -78,6 +78,12 @@ $(document).ready(function() {
     contex.strokeRect(x * cellWidth, y * cellWidth, cellWidth, cellWidth);
   }
 
-
+  function checkCollision(x, y, array) {
+    for(var i = 0; i < array.length; i++) {
+      if(array[i].x == x && array[i].y == y)
+        return true;
+    }
+    return false;
+  }
 
 });
