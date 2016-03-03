@@ -88,9 +88,9 @@ $(document).ready(function() {
 
 $(document).keydown(function(event){
     var key = event.which;
-    if(key == "37" && d != "right") d = "left";
-    else if(key == "38" && d != "down") d = "up";
-    else if(key == "39" && d != "left") d = "right";
-    else if(key == "40" && d != "up") d = "down";
+    if(key == "37" && defaultDirection != "right") defaultDirection = "left";
+    else if(key == "38" && defaultDirection != "down") defaultDirection = "up";
+    else if(key == "39" && defaultDirection != "left") defaultDirection = "right";
+    else if(key == "40" && defaultDirection != "up") defaultDirection = "down";
   })
 });
