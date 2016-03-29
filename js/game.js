@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function(){
   var canvas = $("#canvas")[0];
   var contex = canvas.getContext("2d");
   var width = $("#canvas").width();
@@ -9,7 +9,7 @@ $(document).ready(function() {
   var score;
   var snakeArray;
 
-  function init() {
+  function init(){
     defaultDirection = "right";
     createSnake();
     createFood();
@@ -19,22 +19,22 @@ $(document).ready(function() {
   }
   init();
 
-  function createSnake() {
+  function createSnake(){
     var length = 5;
     snakeArray = [];
-    for (var i = length - 1; i >= 0; i--) {
+    for(var i = length - 1; i >= 0; i--){
       snakeArray.push({x:i, y:0});
     }
   }
 
-  function createFood() {
+  function createFood(){
     food = {
       x: Math.round(Math.random()*(width-cellWidth)/cellWidth),
       y: Math.round(Math.random()*(height-cellWidth)/cellWidth),
     };
   }
 
-  function design() {
+  function design(){
     contex.fillStyle = "white";
     contex.fillRect(0, 0, width, height);
     contex.strokeStyle = "black";
@@ -61,7 +61,7 @@ $(document).ready(function() {
     }
 
     snakeArray.unshift(tail);
-    for(var i = 0; i < snakeArray.length; i++) {
+    for(var i = 0; i < snakeArray.length; i++){
       var cell = snakeArray[i];
       paintCell(cell.x, cell.y);
     }
@@ -71,15 +71,15 @@ $(document).ready(function() {
     contex.fillText(scoreText, 5, height - 5);
   }
 
-  function paintCell(x, y) {
+  function paintCell(x, y){
     contex.fillStyle = "blue";
     contex.fillRect(x * cellWidth, y * cellWidth, cellWidth, cellWidth);
     contex.strokeStyle = "white";
     contex.strokeRect(x * cellWidth, y * cellWidth, cellWidth, cellWidth);
   }
 
-  function checkCollision(x, y, array) {
-    for(var i = 0; i < array.length; i++) {
+  function checkCollision(x, y, array){
+    for(var i = 0; i < array.length; i++){
       if(array[i].x == x && array[i].y == y)
         return true;
     }
