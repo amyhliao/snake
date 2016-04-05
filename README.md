@@ -1,6 +1,6 @@
 # Snake
 
-A classic game of snake that will test your navigation skills and patience.
+A classic game of snake that will test your navigation skills and patience. The goal of the game is to guide the snake to its food and help the snake grow without running into the boundaries of the walls.
 
 ##To Play:
 - Use the up, down, left, or rigth key to navigate and move the snake to its food.
