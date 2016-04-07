@@ -94,3 +94,4 @@ $(document).keydown(function(event){
     else if(key == "40" && defaultDirection != "up") defaultDirection = "down";
   })
 });
+
